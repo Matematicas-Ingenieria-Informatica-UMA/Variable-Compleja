@@ -1,36 +1,59 @@
+\chapter{Los números complejos}
+
 \section{Los números complejos}
-En el siglo XVI(1545) se empieza a trabajar con los numeros complejos, siendo su precursor G. Cardano.
-No sin detractores entre ellos Descartes (1637) y A.De Morgan (1831).
-Y por supuesto grandes adeptos como Euler, Gauss, Cauchy, Weierstrass y Riemman.
+En el siglo XVI se empieza a trabajar con los números complejos, siendo su precursor G. Cardano alrededor de 1545.
+Esta idea contó con detractores entre ellos Descartes (1637) y A. De Morgan (1831).
+Y por como no podría ser de otra manera al tratarse del tema principal de esta asignatura grandes adeptos como Euler, Gauss, Cauchy, Weierstrass y Riemman.
 
-En 1837 Hamilton define \(\mathbb{C}^{}\) como pares ordenados de numeros reales \(\mathbb{R}^{2}=\{(a,b) | a,b \in \mathbb{R}^{}\}\) con las siguientes dos operaciones:
+En 1837 Hamilton define los números complejos,\(\mathbb{C}\), como pares ordenados de números reales, \(\mathbb{R}^{2}=\{(a,b) | a,b \in \mathbb{R}^{}\}\) con las siguientes dos operaciones:
 
--Suma: \((a,b)+(c,d) = (a+c, b+d)\)
--Producto: \((a,b)*(c,d) = (ac-bd, ad+bc)\)
+\begin{itemize}
+  \item Suma: \((a,b)+(c,d) = (a+c, b+d)\)
+  \item Producto: \((a,b)*(c,d) = (ac-bd, ad+bc)\)
+\end{itemize}
 
 Estas operaciones son cerradas y con ellas se satisfacen las propiedades de cuerpo:
 
-% Falta convertir en lista
-1. La suma es asociativa
-2. La suma tiene elemento neutro \((0,0)\).
-3. Existe elemento opuesto para la suma. El opuesto de \((a,b)\) es \((-a,-b)\)
-4. La suma es conmutativa.
-5. La multiplicacion es asociativa.
-6. La multiplicacion tiene elemento neutro (distinto del de la suma) \((1,0)\)
-7. Elemento inverso para la multiplicacion. El inverso multiplicativo de \((a,b) \neq (0,0)\) es \((\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2})\)
-8. La multiplicacion es conmutativa.
-9. Propiedad distributiva del producto respecto de la suma. \((a,b)((c,d)+(e,f))=(a,b)(c+e,d+f) = \)
+\begin{enumerate}
+  \item La suma es asociativa.
+  \item La suma tiene elemento neutro \((0,0)\).
+  \item Existe elemento opuesto para la suma. El opuesto de \((a,b)\) es \((-a,-b)\).
+  \item La suma es conmutativa.
+  \item La multiplicacion es asociativa.
+  \item La multiplicacion tiene elemento neutro (distinto del de la suma) \((1,0)\)
+  \item Existe elemento inverso para la multiplicación de todo elemnto no nulo. El inverso multiplicativo de \((a,b) \neq (0,0)\) es \((\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2})\)
+  \item La multiplicacion es conmutativa.
+  \item Propiedad distributiva del producto respecto de la suma.
 
-Conclusión: \((\mathbb{R}^{2},+,*)\) es cuerpo conmutativo. Lo llamamos \(\mathbb{C}^{}\) y sus elemntos se llaman numeros complejos.
+\begin{eqnarray*}
+  (a,b)((c,d)+(e,f)) & & = (a,b)(c+e,d+f) = \\
+                     & & = (ac+ae-bd-bf,ad+af+bc+be)
+\end{eqnarray*}
 
-Veamos que los numeros reales son subcuerpo de \(\mathbb{C}^{}\).
+\begin{eqnarray*}
+  (a,b)(c,d)+(a,b)(e,f) & & = (ac-bd,ad+bc)+(ae-bf,af+be) = \\
+                        & & = (ac+ae-bd-bf, ad+bc+af+be)
+\end{eqnarray*}
+
+\[(a,b)((c,d)+(e,f)) = (a,b)(c,d)+(a,b)(e,f)\]
+
+\(\hfill \blacksquare\)
+
+\end{enumerate}
+
+
+\textbf{Conclusión:} \((\mathbb{R}^{2},+,*)\) es un cuerpo conmutativo al que llamamos \(\mathbb{C}^{}\) y sus elementos se llaman números complejos.
+
+Veamos que los números reales son subcuerpo de \(\mathbb{C}^{}\).
 
 \[ E= \{(a,0) | a \in \mathbb{R}^{}\} \subset \mathbb{C}^{}\]
 
 Las operaciones suma y producto son cerradas en E:
 
--\((a,0) + (b,0) = (a+b, 0) \in E, a,b \in \mathbb{R}^{}\) 
--\((a,0)*(b,0) = (a*b, 0) \in E, a,b \in \mathbb{R}^{}\)
+\begin{itemize}
+  \item \((a,0) + (b,0) = (a+b, 0) \in E, a,b \in \mathbb{R}^{}\)
+  \item \((a,0)*(b,0) = (a*b, 0) \in E, a,b \in \mathbb{R}^{}\)
+\end{itemize}
 
 y el opuesto aditivo de \( (a,0) \in E\) es \( (-a,0) \in E\) asi como el inverso multiplicativo de  \( (a,0) \in E\) es \( (\frac{1}{a},0) \in E\).
 
@@ -38,7 +61,7 @@ Esto nos dice que E es subcuerpo de \(\mathbb{C}^{}\). Además, este cuerpo E es
 
 \section{Terminologia y nomeclatura}
 
-- Los elementos de \(\mathbb{C}^{} <-> \mathbb{R}^{2}\) se llaman numeros complejos.
+- Los elementos de \(\mathbb{C}^{} <-> \mathbb{R}^{2}\) se llaman números complejos.
 - Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
 - Distinguimos dos elemntos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
 
@@ -49,7 +72,7 @@ Mediante la identificacion \( E <-> \mathbb{R}^{}\). Tenemos que para \(x,y \in 
 Luego \((x,y) = (x,0)+(0,y) = x + yi\).
 De esta manera \(\mathbb{C}^{} = \{x+yi : (x,y) \in \mathbb{R}^{2}\}\).
 
-Los numeros complejos se representan en \(\mathbb{R}^{2}\).
+Los números complejos se representan en \(\mathbb{R}^{2}\).
 \(z = x+yi \in \mathbb{C}^{}\), \(Re(z) = x\) y \(Im(z) = y\).
 
 % Insertar grafica 1.
@@ -72,9 +95,9 @@ En \(\mathbb{R}[x]\), anillo de los polinomios con coeficientes reales, consider
 
 \[ I = <x^2+1> = \{q(x)(x^2+1), q \in \mathbb{R}[x]\}\]
 
-y por tanto, el cociente, \(\frac{\mathbb{R}[x]}{I} = \{p(x)+<x^2+1> : p \in \mathbb{R}[x]\}\) es cuerpo bajo una suma y multiplicacion inducidas por \(\mathbb{R}^{}[x]\).
+y por tanto, el cociente, \(\frac{\mathbb{R}[x]}{I} = \{p(x)+<x^2+1> : p \in \mathbb{R}[x]\}\) es cuerpo bajo una suma y multiplicación inducidas por \(\mathbb{R}^{}[x]\).
 
-Por el algoritmo de la division en \(\mathbb{R}^{}[x]\), todo polinomio p(x) se expresa de forma unica como
+Por el algoritmo de la división en \(\mathbb{R}^{}[x]\), todo polinomio p(x) se expresa de forma única como
 
 \[p(x) = q(x)(x^2+1) + a +bx\]
 
@@ -84,7 +107,7 @@ Esto nos dice que la clase de p(x) en \(\frac{\mathbb{R}[x]}{I}\) es:
 
 %Anotacion 2
 
-Esto nos permite establecer la siguiente identificacion:
+Esto nos permite establecer la siguiente identificación:
 
 %Anotacion 3.
 
@@ -96,11 +119,11 @@ Por ejemplo:
   Si \(z = a+ib \in \mathbb{C}^{}\), entonces definimos su conjugado como
   \[ z = a-ib\] %Falta poner la barra sobre z para indicar el conjugado
 
-  Esta apliacion de conjugacion se consigue en \(\mathbb{R}^{2}\) con la siguiente aplicacion lineal:
+  Esta apliación de conjugación se consigue en \(\mathbb{R}^{2}\) con la siguiente aplicación lineal:
 
   %Anotacion 4
 
-  Geometricamente, z y z son simetricas con respecto al eje real.
+  Geometricamente, z y z son simétricas con respecto al eje real.
 
   %Grafica 2.
 
@@ -112,19 +135,19 @@ Por ejemplo:
   4. z*w = z*w % Demostracion de esto en anotacion 5.
   5. Se trata de una involucion: z (dos veces conjugado ) = z
   6. Si \(z = a+ib \in \mathbb{C}^{}\), se tiene que
-  \[ Re(z) = \frac{z+z_}{2}\]
-  \[Im(z) = \frac{z-z_}{2}\]
+  \[ Re(z) = \frac{z+z}{2}\]
+  \[Im(z) = \frac{z-z}{2}\]
 \end{definicion}
 
-\section{\(\mathbb{C}^{}\) como espacio vectorial}
+\section{Los complejos como espacio vectorial}
 
--Al estar \(\mathbb{C}^{}\) identificado con \(\mathbb{R}^{2}\) tenemos que \(\mathbb{C}^{}\) es espacio vectorial real de dimension 2.
+-Al estar \(\mathbb{C}\) identificado con \(\mathbb{R}^{2}\) tenemos que \(\mathbb{C}^{}\) es espacio vectorial real de dimensión 2.
 La base canónica sería \(\{1,i\}\)
 
-- Pero también como \(\mathbb{C}^{}\) es cuerpo, tenemos que \(\mathbb{C}^{}\) es esapcio vectorial complejo de dimension 1.
+- Pero también como \(\mathbb{C}^{}\) es cuerpo, tenemos que \(\mathbb{C}^{}\) es espacio vectorial complejo de dimensión 1.
 La base canónica es \(\{1\}\)
 
-\subsection{Aplicaciones lineales de \(\mathbb{C}^{}\) en \(\mathbb{C}^{}\)}
+\subsection{Aplicaciones lineales}
 
 - Punto de vista real:
 
@@ -142,11 +165,11 @@ Para \(z = x+iy <-> (x,y) \) %Pasar (x,y) a formato vector.
 
 Rectas:
 
-- Vision real: \(Ax + By + C = 0\)
+- Visión real: \(Ax + By + C = 0\)
 
 Traducimos:
 
-- Vision compleja: \(0 = A \frac{z+z}{2}+B \frac{z-z}{2} + C = \frac{A-iB}{2}z+\frac{a+iB}{2}z_ + C = \beta z + \beta z_ + \gamma \) 
+- Visión compleja: \(0 = A \frac{z+z}{2}+B \frac{z-z}{2} + C = \frac{A-iB}{2}z+\frac{a+iB}{2}z_ + C = \beta z + \beta z_ + \gamma \) 
 
 Nos queda entonces:
 
