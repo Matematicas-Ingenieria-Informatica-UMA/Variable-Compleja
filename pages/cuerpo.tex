@@ -1,0 +1,159 @@
+\section{Los números complejos}
+En el siglo XVI(1545) se empieza a trabajar con los numeros complejos, siendo su precursor G. Cardano.
+No sin detractores entre ellos Descartes (1637) y A.De Morgan (1831).
+Y por supuesto grandes adeptos como Euler, Gauss, Cauchy, Weierstrass y Riemman.
+
+En 1837 Hamilton define \(\mathbb{C}^{}\) como pares ordenados de numeros reales \(\mathbb{R}^{2}=\{(a,b) | a,b \in \mathbb{R}^{}\}\) con las siguientes dos operaciones:
+
+-Suma: \((a,b)+(c,d) = (a+c, b+d)\)
+-Producto: \((a,b)*(c,d) = (ac-bd, ad+bc)\)
+
+Estas operaciones son cerradas y con ellas se satisfacen las propiedades de cuerpo:
+
+% Falta convertir en lista
+1. La suma es asociativa
+2. La suma tiene elemento neutro \((0,0)\).
+3. Existe elemento opuesto para la suma. El opuesto de \((a,b)\) es \((-a,-b)\)
+4. La suma es conmutativa.
+5. La multiplicacion es asociativa.
+6. La multiplicacion tiene elemento neutro (distinto del de la suma) \((1,0)\)
+7. Elemento inverso para la multiplicacion. El inverso multiplicativo de \((a,b) \neq (0,0)\) es \((\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2})\)
+8. La multiplicacion es conmutativa.
+9. Propiedad distributiva del producto respecto de la suma. \((a,b)((c,d)+(e,f))=(a,b)(c+e,d+f) = \)
+
+Conclusión: \((\mathbb{R}^{2},+,*)\) es cuerpo conmutativo. Lo llamamos \(\mathbb{C}^{}\) y sus elemntos se llaman numeros complejos.
+
+Veamos que los numeros reales son subcuerpo de \(\mathbb{C}^{}\).
+
+\[ E= \{(a,0) | a \in \mathbb{R}^{}\} \subset \mathbb{C}^{}\]
+
+Las operaciones suma y producto son cerradas en E:
+
+-\((a,0) + (b,0) = (a+b, 0) \in E, a,b \in \mathbb{R}^{}\) 
+-\((a,0)*(b,0) = (a*b, 0) \in E, a,b \in \mathbb{R}^{}\)
+
+y el opuesto aditivo de \( (a,0) \in E\) es \( (-a,0) \in E\) asi como el inverso multiplicativo de  \( (a,0) \in E\) es \( (\frac{1}{a},0) \in E\).
+
+Esto nos dice que E es subcuerpo de \(\mathbb{C}^{}\). Además, este cuerpo E es isomorfo a \(\mathbb{R}^{}\) (isomorfo en el sentido de cuerpo) mediante la identificacion \((a,0) \in E <-> a \in \mathbb{R}^{}\) % Falta cambiar flecha.
+
+\section{Terminologia y nomeclatura}
+
+- Los elementos de \(\mathbb{C}^{} <-> \mathbb{R}^{2}\) se llaman numeros complejos.
+- Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
+- Distinguimos dos elemntos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
+
+Mediante la identificacion \( E <-> \mathbb{R}^{}\). Tenemos que para \(x,y \in \mathbb{R}^{}\).
+
+% Anotacion 1.
+
+Luego \((x,y) = (x,0)+(0,y) = x + yi\).
+De esta manera \(\mathbb{C}^{} = \{x+yi : (x,y) \in \mathbb{R}^{2}\}\).
+
+Los numeros complejos se representan en \(\mathbb{R}^{2}\).
+\(z = x+yi \in \mathbb{C}^{}\), \(Re(z) = x\) y \(Im(z) = y\).
+
+% Insertar grafica 1.
+
+- \( \mathbb{C}^{}\) no tiene orden. (A diferencia de \(\mathbb{R}^{}\))
+
+- \(i^2 = (1,0)(0,1) = (0*0-1*1, 0*1+1*0)\).
+
+Eston nos dice que i es solucion de la ecuacion
+\begin{equation*}
+  x^2+1=0
+\end{equation*}
+Otra solucion es -i.
+
+- En \(\mathbb{R}^{}\), \(x^2+1=0 \) no tiene raices, pero en \(\mathbb{C}^{}\) si es factorizable como \(x^2+1= (x-i)(x+i)\)
+
+- Lo anterior da otra forma algebraica de introducir \(\mathbb{C}^{}\)
+
+En \(\mathbb{R}[x]\), anillo de los polinomios con coeficientes reales, consideramos el polinomio \(x^2+1=0\), el cual, al ser irreducible genera un ideal maximal en  \(\mathbb{R}[x]\).
+
+\[ I = <x^2+1> = \{q(x)(x^2+1), q \in \mathbb{R}[x]\}\]
+
+y por tanto, el cociente, \(\frac{\mathbb{R}[x]}{I} = \{p(x)+<x^2+1> : p \in \mathbb{R}[x]\}\) es cuerpo bajo una suma y multiplicacion inducidas por \(\mathbb{R}^{}[x]\).
+
+Por el algoritmo de la division en \(\mathbb{R}^{}[x]\), todo polinomio p(x) se expresa de forma unica como
+
+\[p(x) = q(x)(x^2+1) + a +bx\]
+
+con \(a,b \in \mathbb{R}^{}\)
+
+Esto nos dice que la clase de p(x) en \(\frac{\mathbb{R}[x]}{I}\) es:
+
+%Anotacion 2
+
+Esto nos permite establecer la siguiente identificacion:
+
+%Anotacion 3.
+
+Por ejemplo:
+\[[x]^2=[x^2+1-1]=[x^2+1]-[1] = [0] - [1] = -[1]\]
+\[(i^2 = -1)\]
+
+\begin{definicion}
+  Si \(z = a+ib \in \mathbb{C}^{}\), entonces definimos su conjugado como
+  \[ z = a-ib\] %Falta poner la barra sobre z para indicar el conjugado
+
+  Esta apliacion de conjugacion se consigue en \(\mathbb{R}^{2}\) con la siguiente aplicacion lineal:
+
+  %Anotacion 4
+
+  Geometricamente, z y z son simetricas con respecto al eje real.
+
+  %Grafica 2.
+
+  Propiedades:
+
+  1. 0 = 0
+  2. 1 = 1
+  3. z+w = z+w
+  4. z*w = z*w % Demostracion de esto en anotacion 5.
+  5. Se trata de una involucion: z (dos veces conjugado ) = z
+  6. Si \(z = a+ib \in \mathbb{C}^{}\), se tiene que
+  \[ Re(z) = \frac{z+z_}{2}\]
+  \[Im(z) = \frac{z-z_}{2}\]
+\end{definicion}
+
+\section{\(\mathbb{C}^{}\) como espacio vectorial}
+
+-Al estar \(\mathbb{C}^{}\) identificado con \(\mathbb{R}^{2}\) tenemos que \(\mathbb{C}^{}\) es espacio vectorial real de dimension 2.
+La base canónica sería \(\{1,i\}\)
+
+- Pero también como \(\mathbb{C}^{}\) es cuerpo, tenemos que \(\mathbb{C}^{}\) es esapcio vectorial complejo de dimension 1.
+La base canónica es \(\{1\}\)
+
+\subsection{Aplicaciones lineales de \(\mathbb{C}^{}\) en \(\mathbb{C}^{}\)}
+
+- Punto de vista real:
+
+%Anotacion 6
+
+Para \(z = x+iy <-> (x,y) \) %Pasar (x,y) a formato vector.
+
+%Anotacion 7.
+
+- Punto de vista complejo:
+
+%Anotacion 8.
+
+\subsection{Rectas y circunferencias en el plano}
+
+Rectas:
+
+- Vision real: \(Ax + By + C = 0\)
+
+Traducimos:
+
+- Vision compleja: \(0 = A \frac{z+z}{2}+B \frac{z-z}{2} + C = \frac{A-iB}{2}z+\frac{a+iB}{2}z_ + C = \beta z + \beta z_ + \gamma \) 
+
+Nos queda entonces:
+
+%Anotacion 9.
+
+
+
+
+
+
