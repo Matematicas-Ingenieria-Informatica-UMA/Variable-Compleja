@@ -61,21 +61,37 @@ Esto nos dice que E es subcuerpo de \(\mathbb{C}^{}\). Además, este cuerpo E es
 
 \section{Terminologia y nomeclatura}
 
-- Los elementos de \(\mathbb{C}^{} <-> \mathbb{R}^{2}\) se llaman números complejos.
-- Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
-- Distinguimos dos elemntos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
+\begin{itemize}
+  \item Los elementos de \(\mathbb{C}^{} <-> \mathbb{R}^{2}\) se llaman números complejos.
 
-Mediante la identificacion \( E <-> \mathbb{R}^{}\). Tenemos que para \(x,y \in \mathbb{R}^{}\).
+    \item Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
 
-% Anotacion 1.
+      \item Distinguimos dos elemntos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
 
-Luego \((x,y) = (x,0)+(0,y) = x + yi\).
-De esta manera \(\mathbb{C}^{} = \{x+yi : (x,y) \in \mathbb{R}^{2}\}\).
+        \item Mediante la identificacion \( E <-> \mathbb{R}^{}\). Tenemos que para \(x,y \in \mathbb{R}^{}\).
+\[ x*1=(x,0)(1,0)=(x*1-0*0, 0*1+x*0)=(x,0)=x \]
+\[ y*i=(y,0)(0,1)=(y*0-0*1, y*1+0*0)=(0,y)=yi \]
+Luego \((x,y) = (x,0)+(0,y) = x + yi\) y de esta manera \(\mathbb{C}^{} = \{x+yi : (x,y) \in \mathbb{R}^{2}\}\).
 
-Los números complejos se representan en \(\mathbb{R}^{2}\).
-\(z = x+yi \in \mathbb{C}^{}\), \(Re(z) = x\) y \(Im(z) = y\).
+  \item Los números complejos se pueden representar en \(\mathbb{R}^{2}\) como sigue:
+Si z es un número complejo, consideramos \(Re(z) = x\) y \(Im(z) = y\).
+\end{itemize}
 
-% Insertar grafica 1.
+% Grafica sobre la representacion de numeros complejos en el plano.
+\begin{tikzpicture}[>=stealth]
+    \begin{axis}[
+        xmin=-4,xmax=4,
+        ymin=-2,ymax=2,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$y$},
+        ]
+        \addplot[no marks,blue,<->] expression[domain=0:1,samples=100]{x} 
+                    node[pos=0.65,anchor=south west]{$x+iy$}; 
+    \end{axis}
+\end{tikzpicture}
 
 - \( \mathbb{C}^{}\) no tiene orden. (A diferencia de \(\mathbb{R}^{}\))
 
