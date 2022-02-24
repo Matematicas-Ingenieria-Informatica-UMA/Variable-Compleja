@@ -25,6 +25,7 @@ Estas operaciones son cerradas y con ellas se satisfacen las propiedades de cuer
   \item La multiplicacion es conmutativa.
   \item Propiedad distributiva del producto respecto de la suma.
 \end{enumerate}
+
 \begin{eqnarray*}
   (a,b)((c,d)+(e,f)) & & = (a,b)(c+e,d+f) = \\
                      & & = (ac+ae-bd-bf,ad+af+bc+be)
@@ -54,28 +55,23 @@ Las operaciones suma y producto son cerradas en E:
 
 y el opuesto aditivo de \( (a,0) \in E\) es \( (-a,0) \in E\) asi como el inverso multiplicativo de  \( (a,0) \in E\) es \( (\frac{1}{a},0) \in E\).
 
-Esto nos dice que E es subcuerpo de \(\mathbb{C}^{}\). Además, este cuerpo E es isomorfo a \(\mathbb{R}^{}\) (isomorfo en el sentido de cuerpo) mediante la identificación \((a,0) \in E \leftrightarrow a \in \mathbb{R}^{}\) % Falta cambiar flecha.
+Esto nos dice que E es subcuerpo de \(\mathbb{C}^{}\). Además, este cuerpo E es isomorfo a \(\mathbb{R}^{}\) (isomorfo en el sentido de cuerpo) mediante la identificación \((a,0) \in E \leftrightarrow a \in \mathbb{R}^{}\)
 
 \section{Terminologia y nomeclatura}
 
 \begin{itemize}
   \item Los elementos de \(\mathbb{C}^{} \leftrightarrow \mathbb{R}^{2}\) se llaman números complejos.
-
-    \item Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
-
-      \item Distinguimos dos elemntos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
-
-        \item Mediante la identificación \( E \leftrightarrow \mathbb{R}^{}\). Tenemos que para \(x,y \in \mathbb{R}^{}\).
+  \item Si \((a,b) \in \mathbb{C}^{} \) su parte real es a y su parte imaginaria es b
+  \item Distinguimos dos elementos de \(\mathbb{C}^{}\): \((1,0) = 1\) y \((0,1) = i\)
+  \item Mediante la identificación \( E \leftrightarrow \mathbb{R}^{}\). Tenemos que para \(x,y \in \mathbb{R}^{}\).
 \[ x\cdot 1=(x,0)(1,0)=(x \cdot 1-0\cdot0, 0\cdot1+x\cdot0)=(x,0)=x \]
 \[ y\cdot i=(y,0)(0,1)=(y \cdot 0-0\cdot1, y\cdot1+0\cdot0)=(0,y)=yi \]
 Luego \((x,y) = (x,0)+(0,y) = x + yi\) y de esta manera \(\mathbb{C}^{} = \{x+yi : (x,y) \in \mathbb{R}^{2}\}\).
-
   \item Los números complejos se pueden representar en \(\mathbb{R}^{2}\) como sigue:
 Si z es un número complejo, consideramos \(Re(z) = x\) y \(Im(z) = y\).
 \end{itemize}
 
-% Grafica sobre la representacion de numeros complejos en el plano.
-\begin{center}
+\begin{center} % Grafica sobre la representacion de numeros complejos en el plano.
 \begin{tikzpicture}
     \begin{axis}[
         xmin=-2,xmax=2,
@@ -118,14 +114,12 @@ Por el algoritmo de la división en \(\mathbb{R}^{}[x]\), todo polinomio p(x) se
 con \(a,b \in \mathbb{R}^{}\)
 
 Esto nos dice que la clase de p(x) en \(\faktor{\mathbb{R}[x]}{I}\) es:
-%Anotacion 2
 \begin{eqnarray*}
 [p(x)] & = & p(x) + <x^2+1> = [q(x)(x^2+1)+a+bx] = \\
        & = & [q(x)(x^2+1)] + [a+bx] = [a+bx] = [a]+[b][x]
 \end{eqnarray*}
 
 Esto nos permite establecer la siguiente identificación:
-%Anotacion 3.
 \begin{eqnarray*}
   \mathbb{C} & \leftrightarrow & \faktor{\mathbb{R}[x]}{I} \\
         a+ib & \leftrightarrow & [a]+[b][x]
@@ -142,7 +136,6 @@ Por ejemplo:
 \end{definicion}
 
 Esta apliación de conjugación se consigue en \(\mathbb{R}^{2}\) con la siguiente aplicación lineal:
-%Anotacion 4
 \begin{eqnarray*}
   \mathbb{R}^{2} & \longrightarrow & \mathbb{R}^{2} \\
 \begin{pmatrix}
@@ -163,8 +156,7 @@ y
 
 Geometricamente, \(z\) y \(\overline{z}\) son simétricas con respecto al eje real.
 
-% Grafica sobre numeros complejos y sus conjugados.
-\begin{center}
+\begin{center} % Grafica sobre numeros complejos y sus conjugados.
 \begin{tikzpicture}
     \begin{axis}[
         xmin=-2,xmax=2,
@@ -192,22 +184,24 @@ Geometricamente, \(z\) y \(\overline{z}\) son simétricas con respecto al eje re
   \item \(\overline{zw} = \overline{z} \; \overline{w}\)
   \item Se trata de una involucion: \(\overline{\overline{z}} = z\)
   \item Si \(z \in \mathbb{C}^{}\), se tiene que:
-\[ Re(z) = \frac{z+\overline{z}}{2}\]
-\[Im(z) = \frac{z-\overline{z}}{2}\]
+    \[ Re(z) = \frac{z+\overline{z}}{2}\]
+    \[Im(z) = \frac{z-\overline{z}}{2i}\]
 \end{enumerate}
 
 \section{Los complejos como espacio vectorial}
 
--Al estar \(\mathbb{C}\) identificado con \(\mathbb{R}^{2}\) tenemos que \(\mathbb{C}^{}\) es espacio vectorial real de dimensión 2.
-La base canónica sería \(\{1,i\}\)
-
-- Pero también como \(\mathbb{C}^{}\) es cuerpo, tenemos que \(\mathbb{C}^{}\) es espacio vectorial complejo de dimensión 1.
-La base canónica es \(\{1\}\)
+\begin{itemize}
+  \item Al estar \(\mathbb{C}\) identificado con \(\mathbb{R}^{2}\) tenemos que \(\mathbb{C}^{}\) es espacio vectorial real de dimensión 2.
+  La base canónica sería \(\{1,i\}\)
+  \item Pero también como \(\mathbb{C}^{}\) es cuerpo, tenemos que \(\mathbb{C}^{}\) es espacio vectorial complejo de dimensión 1.
+  La base canónica es \(\{1\}\)
+\end{itemize}
 
 \begin{definicion}[Norma]
+  Definimos en los números complejos una norma como sigue:
   \begin{eqnarray*}
-    |\cdot| : \mathbb{C}^{ } \rightarrow  \mathbb{R}^{+} \\
-    z \mapsto |z|=\sqrt{(Re(z))^2+(Im(z))^2}
+    |\cdot| : \mathbb{C}^{ } & \rightarrow & \mathbb{R}^{+} \\
+                           z & \mapsto & |z|=\sqrt{(Re(z))^2+(Im(z))^2}
   \end{eqnarray*}
 \end{definicion}
 
@@ -239,11 +233,48 @@ La norma de \(\mathbb{C}^{}\) proviene de un producto escalar complejo:
 \subsection{Aplicaciones lineales}
 
 - Punto de vista real:
+\begin{eqnarray*}
+  L : \quad \mathbb{C}^{ } & \rightarrow & \mathbb{C}^{} \\
+ \begin{pmatrix}
+   x \\
+   y
+ \end{pmatrix} & \mapsto & L\begin{pmatrix}
+   x \\
+   y
+ \end{pmatrix} = \begin{pmatrix}
+   L1 | L2
+ \end{pmatrix}\begin{pmatrix}
+   x \\
+   y
+ \end{pmatrix}
+\end{eqnarray*}
 
-%Anotacion 6
+Para \(z = x+iy \leftrightarrow \begin{pmatrix}
+ x \\
+ y
+\end{pmatrix} \). Tenemos el siguiente desarrollo:
+\begin{eqnarray*}
+  Lz & \leftrightarrow & L\begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix} = \begin{pmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22}
+  \end{pmatrix}\begin{pmatrix}
+    x \\
+    y
+  \end{pmatrix} = \begin{pmatrix}
+  a_{11}x + a_{12}y \\
+  a_{21}x + a_{22}y
+  \end{pmatrix} \\
+   & \leftrightarrow & (a_{11}x + a_{12}y)+i(a_{21}x + a_{22}y) = \\
+   & = & (a_{11}+ia_{21})Re(z) + (a_{12}+ia_{22})Im(z) = \\
+   & = & (a_{11}+ia_{21})\frac{z+\overline{z}}{2} + (a_{12}+ia_{22})\frac{z-\overline{z}}{2i} = \\
+   & = & \dfrac{(a_{11}+a_{22})+i(-a_{12}+a_{21})}{2}z+\dfrac{(a_{11}-a_{22})+i(a_{12}+a_{21})}{2}\overline{z}
+\end{eqnarray*}
+Si denominamos \( \alpha = \dfrac{(a_{11}+a_{22})+i(-a_{12}+a_{21})}{2} \) y \( \beta = \dfrac{(a_{11}-a_{22})+i(a_{12}+a_{21})}{2} \) tenemos finalmente que la expresión de una aplicación lineal es la que sigue:
 
-Para \(z = x+iy <-> (x,y) \) %Pasar (x,y) a formato vector.
-
+\[Lz = \alpha z + \beta \overline{z}\]
 %Anotacion 7.
 
 - Punto de vista complejo:
@@ -305,7 +336,7 @@ Las bolas se llaman discos.
 
 \textbf{Importante: }
 
-\(\mathbb{C}^{}, |\cdot|\) es un espacio vectorial normado COMPLETO (Toda sucesion de Cauchy converge)
+\((\mathbb{C}^{}, |\cdot|)\) es un espacio vectorial normado COMPLETO (Toda sucesion de Cauchy converge)
 
 \begin{proof}
 %Anotacion 11.
