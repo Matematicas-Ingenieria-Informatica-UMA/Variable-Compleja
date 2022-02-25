@@ -205,31 +205,80 @@ Geometricamente, \(z\) y \(\overline{z}\) son simétricas con respecto al eje re
   \end{eqnarray*}
 \end{definicion}
 
-
+Veamos que efectivamente la expresión anterior define una norma:
 \begin{enumerate}
   \item \(|z| \geq 0 \)
-  % \item \( |z| = 0 \Leftrightarrow (Re(z))^2+(Im(z))^2= 0 \Leftrightarrow Re(z) = 0 \and Im(z) = 0 \Leftrightarrow z = 0 \) 
-  \item Desigualdad triangular %Anotacion 1
-  \item Compatibilidad de \( | \cdot | \) con el producto por escalares. 
+  \item \( |z| = 0 \Leftrightarrow (Re(z))^2+(Im(z))^2= 0 \Leftrightarrow Re(z) = 0 \wedge Im(z) = 0 \Leftrightarrow z = 0 \) 
+  \item Desigualdad triangular: \( |z+w| \leq |z|+|w| \)
+    Para provar esto veamos que se satisfacen otras tres propiedades como lema:
+    \begin{lema}[3.1]
+      \[ Re(z) = x \leq  |z|\]
+      \[ Im(z) = y \leq |z|\]
+      \begin{proof}
+      \[ Re(z) = x \leq |x| = \sqrt{x^2} \leq \sqrt{x^2+y^2} = |z|\]
+      \[ Im(z) = y \leq |y| = \sqrt{y^2} \leq \sqrt{x^2+y^2} = |z|\]
+      \end{proof}
+    \end{lema}
+    \begin{lema}[3.2]
+      \[|zw| = |z||w|\]
+      \begin{proof}
+        \begin{eqnarray*}
+          |zw| = \sqrt{zw \cdot \overline{zw}} = \sqrt{z \overline{z} \cdot w \overline{w}} = \sqrt{|z|^2|w|^2} = |z||w|  
+        \end{eqnarray*}
+      \end{proof}
+    \end{lema}
+    \begin{lema}[3.3]
+      \[|\overline{z}| = |z|\]
+      \begin{proof}
+        \[|\overline{z}| = \sqrt{\overline{z}\; \overline{\overline{z}}}= \sqrt{\overline{z}\; z} \]
+      \end{proof}
+    \end{lema}
+    Demostremos por fin que se satisface la desigualdad triangular:
+    \begin{proof}
+      \begin{eqnarray*}
+        & & |z+w|^2 = (z+w)\overline{(z+w)} = z\overline{z} + w\overline{w} + z\overline{w} + w\overline{z} = |z|^2+|w|^2+2Re(z\overline{w}) \\
+        & &  \overset{3.1}{\leq} |z|^2+|w|^2+2|z\overline{w}| \overset{3.2 \;3.3}{=}|z|^2+|w|^2+2|z||w| = \\
+        & & = (|z|+|w|)^2 \Rightarrow \\
+        & & \Rightarrow |z+w| \leq |z|+|w|
+      \end{eqnarray*}
+    \end{proof}
+  \item Compatibilidad de \( | \cdot | \) con el producto por escalares:
+    \[ |\lambda z | = |\lambda| |z| \qquad \text{con} \qquad \lambda \in \mathbb{K}=\mathbb{C},\mathbb{R} \quad z \in \mathbb{C}\]
 
 \end{enumerate}
 
 EL hecho de tener definida la multiplicación en \(\mathbb{C}^{}\), junto con la propiedad 3.2 \(|zw| = |z||w|\) nos dice que \(\mathbb{C}^{}\) es un álgebra (real o compleja) conmutativa (por ser la multiplicación conmutativa).
 
-La norma de \(\mathbb{C}^{}\) proviene de un producto escalar complejo:
-\[<z,w>_{\mathbb{C}^{}} = z \overline{w}\]
+La norma de \(\mathbb{C}\) proviene de un producto escalar complejo:
+\begin{eqnarray*}
+  <z,w>_{\mathbb{C}} : \mathbb{C} \times \mathbb{C} & \rightarrow & \mathbb{C} \\
+  (z,w) & \mapsto & <z,w>_{\mathbb{C}} = z \overline{w}
+\end{eqnarray*}
 
 \textbf{Propiedades:}
-% Anotacion 3
 \begin{enumerate}
-  \item Sesquilial. 
-  \item Hermiticidad.
+  \item Sesquilial, es decir, lineal respecto a la primera variable y lienal-conjugada respecto de la segunda. 
+    \[\lambda_1,\lambda_2,z,z_1,z_2,w,w_1,w_2\in \mathbb{C}\]
+    \begin{itemize}
+      \item \(<\lambda_1z_1+\lambda_2z_2,w> = (\lambda_1z_1+\lambda_2z_2)\overline{w} = \lambda_1 <z_1,w> + \lambda_2<z_2,w>\)
+      \item \(<z,\lambda_1w_1+\lambda_2w_2> = z\overline{(\lambda_1w_1+\lambda_2w_2)} = \overline{\lambda_1} <z,w_1> + \overline{\lambda_2}<z,w_2>\)
+    \end{itemize}
+  \item Hermiticidad (Simetría conjugada).
+    \[ <z,w> = z\overline{w}= \overline{\overline{z}w}= <\overline{z,w}> \] %TODO: arreglar <\overline{z,w}>
   \item Definida positiva.
+    \[<z,z> = z \overline{z} = |z|^2 \geq 0 \qquad z \in \mathbb{C}\]
+    Además:
+    \[<z,z>=0 \Leftrightarrow |z| = 0 \Leftrightarrow z = 0\]
 \end{enumerate}
 
 ¿Cómo expresar el producto escalar en \(\mathbb{R}^{2}\) en términos complejos?
-%Anotación 4
-
+Sean:
+\[z_1 = x_1+iy_1 \in \mathbb{C} \leftrightarrow (x_1,y_1)\]
+\[z_2 = x_2+iy_2 \in \mathbb{C} \leftrightarrow (x_2,y_2)\]
+El producto escalar real es:
+\begin{eqnarray*}
+  <(x_1,y_1),(x_2,y_2)>_{\mathbb{R}} = x_1x_2+y_1y_2 = Re(z\overline{z}) = Re(<z_1,z_2>_{\mathbb{C}})
+\end{eqnarray*}
 \subsection{Aplicaciones lineales}
 
 - Punto de vista real:
@@ -275,11 +324,12 @@ Para \(z = x+iy \leftrightarrow \begin{pmatrix}
 Si denominamos \( \alpha = \dfrac{(a_{11}+a_{22})+i(-a_{12}+a_{21})}{2} \) y \( \beta = \dfrac{(a_{11}-a_{22})+i(a_{12}+a_{21})}{2} \) tenemos finalmente que la expresión de una aplicación lineal es la que sigue:
 
 \[Lz = \alpha z + \beta \overline{z}\]
-%Anotacion 7.
 
 - Punto de vista complejo:
-
-%Anotacion 8.
+\begin{eqnarray*}
+  L : \quad \mathbb{C}^{ } & \rightarrow & \mathbb{C}^{} \\
+  z \cdot 1 & \mapsto & z \cdot L(1) = \lambda z,  \qquad \lambda \in \mathbb{C}
+\end{eqnarray*}
 
 \subsection{Rectas y circunferencias en el plano}
 
@@ -293,7 +343,7 @@ Traducimos:
 
 Nos queda entonces:
 
-%Anotacion 9.
+\[\beta z + \overline{\beta} \; \overline{z} + \gamma = 0, \qquad \beta \in \mathbb{C}-\{0\}, \gamma \in \mathbb{R}^{}\]
 
 \subsection{Circuferencia en los complejos}
 
@@ -338,15 +388,35 @@ Las bolas se llaman discos.
 
 \((\mathbb{C}^{}, |\cdot|)\) es un espacio vectorial normado COMPLETO (Toda sucesion de Cauchy converge)
 
-\begin{proof}
-%Anotacion 11.
- %Prueba cauchy 
-\end{proof}
+\begin{teorema}[Los números complejos son completos]
+  Sea \(\{z_n\}\) una sucesión de números complejos. Si es una sucesión de Cauchy entonces es convergente.
+  \begin{proof}
+  %Anotacion 11.
+  %Prueba cauchy 
+    Sea \(\{z_n\}\) de Cauchy, entonces se tiene que \(\{Re(z_n)\}\) y \(\{Im(z_n)\}\) son sucesiones de Cauchy en \(\mathbb{R}\) y por la completitud de \(\mathbb{R}\) son convergentes a ciertos \(x_0, \;y_0\) respectivamente.
+
+    De aquí se sigue que:
+    \[z_n \rightarrow z_0 = x_0+iy_0\]
+    Ya que:
+    \[|z_n-z_0|^2=(Re(z_n-z_0))^2+(Im(z_n-z_0))^2 \rightarrow 0^2+0^2=0 \]
+
+  \end{proof}
+\end{teorema}
 
 En cuanto a la continuidad de funciones:
 
-%Anotacion 12. 
+\begin{eqnarray*}
+  & & f:D\subset \mathbb{C} \rightarrow \mathbb{C} \qquad \text{es continua} \Leftrightarrow \\
+  \Leftrightarrow & & \begin{cases}
+    Re(f): D \rightarrow \mathbb{R} \\
+    Im(f): D \rightarrow \mathbb{R}
+  \end{cases} \qquad \text{son continuas}
+\end{eqnarray*}
 
+\subsection{Algebra de Banach y función exponencial}
+Tenemos entonces que \((\mathbb{C},+,\cdot, |\cdot|)\) es un algebra de Banach conmutativo, luego la teoria de series de potencias tiene perfecto sentido en \(\mathbb{C}\), y en particular podemos definir la exponencial de cualquier número complejo:
 
+Sea \(z=x+iy, \; x,y\in \mathbb{R}\) entonces \(e^z=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!}\)
 
-
+Además teniendo en cuenta la conmutatividad del producto en \(\mathbb{C}\), tenemos que:
+\[e^{z_1+z_2}=e^{z_1}e^{z_2}\]
