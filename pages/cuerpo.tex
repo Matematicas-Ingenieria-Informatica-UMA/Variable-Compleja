@@ -24,21 +24,20 @@ Estas operaciones son cerradas y con ellas se satisfacen las propiedades de cuer
   \item Existe elemento inverso para la multiplicación de todo elemnto no nulo. El inverso multiplicativo de \((a,b) \neq (0,0)\) es \((\frac{a}{a^2+b^2},\frac{-b}{a^2+b^2})\)
   \item La multiplicacion es conmutativa.
   \item Propiedad distributiva del producto respecto de la suma.
+    \begin{proof}
+      \begin{eqnarray*}
+        (a,b)((c,d)+(e,f)) & & = (a,b)(c+e,d+f) = \\
+                           & & = (ac+ae-bd-bf,ad+af+bc+be)
+      \end{eqnarray*}
+
+      \begin{eqnarray*}
+        (a,b)(c,d)+(a,b)(e,f) & & = (ac-bd,ad+bc)+(ae-bf,af+be) = \\
+                              & & = (ac+ae-bd-bf, ad+bc+af+be)
+      \end{eqnarray*}
+
+      \[(a,b)((c,d)+(e,f)) = (a,b)(c,d)+(a,b)(e,f)\]
+    \end{proof}
 \end{enumerate}
-
-\begin{eqnarray*}
-  (a,b)((c,d)+(e,f)) & & = (a,b)(c+e,d+f) = \\
-                     & & = (ac+ae-bd-bf,ad+af+bc+be)
-\end{eqnarray*}
-
-\begin{eqnarray*}
-  (a,b)(c,d)+(a,b)(e,f) & & = (ac-bd,ad+bc)+(ae-bf,af+be) = \\
-                        & & = (ac+ae-bd-bf, ad+bc+af+be)
-\end{eqnarray*}
-
-\[(a,b)((c,d)+(e,f)) = (a,b)(c,d)+(a,b)(e,f)\]
-
-\(\hfill \blacksquare\)
 
 \textbf{Conclusión:} \((\mathbb{R}^{2},+,\cdot)\) es un cuerpo conmutativo al que llamamos \(\mathbb{C}^{}\) y sus elementos se llaman números complejos.
 
@@ -115,8 +114,8 @@ con \(a,b \in \mathbb{R}^{}\)
 
 Esto nos dice que la clase de p(x) en \(\faktor{\mathbb{R}[x]}{I}\) es:
 \begin{eqnarray*}
-[p(x)] & = & p(x) + <x^2+1> = [q(x)(x^2+1)+a+bx] = \\
-       & = & [q(x)(x^2+1)] + [a+bx] = [a+bx] = [a]+[b][x]
+  [p(x)] & = & p(x) + <x^2+1> = [q(x)(x^2+1)+a+bx] = \\
+         & = & [q(x)(x^2+1)] + [a+bx] = [a+bx] = [a]+[b][x]
 \end{eqnarray*}
 
 Esto nos permite establecer la siguiente identificación:
@@ -138,20 +137,20 @@ Por ejemplo:
 Esta apliación de conjugación se consigue en \(\mathbb{R}^{2}\) con la siguiente aplicación lineal:
 \begin{eqnarray*}
   \mathbb{R}^{2} & \longrightarrow & \mathbb{R}^{2} \\
-\begin{pmatrix}
-x\\
-y
-\end{pmatrix} & \longmapsto &
-\begin{pmatrix}
-x\\
--y
-\end{pmatrix} = \begin{pmatrix}
-1 & 0\\
-0 & -1
-\end{pmatrix} \begin{pmatrix}
-x\\
-y
-\end{pmatrix} 
+  \begin{pmatrix}
+    x\\
+    y
+  \end{pmatrix} & \longmapsto &
+  \begin{pmatrix}
+    x\\
+    -y
+  \end{pmatrix} = \begin{pmatrix}
+    1 & 0\\
+    0 & -1
+  \end{pmatrix} \begin{pmatrix}
+    x\\
+    y
+  \end{pmatrix} 
 \end{eqnarray*}
 
 Geometricamente, \(z\) y \(\overline{z}\) son simétricas con respecto al eje real.
@@ -331,7 +330,7 @@ Si denominamos \( \alpha = \dfrac{(a_{11}+a_{22})+i(-a_{12}+a_{21})}{2} \) y \( 
   z \cdot 1 & \mapsto & z \cdot L(1) = \lambda z,  \qquad \lambda \in \mathbb{C}
 \end{eqnarray*}
 
-\subsection{Rectas y circunferencias en el plano}
+\subsection{Rectas complejas}
 
 Rectas:
 
@@ -362,7 +361,7 @@ Nos queda entonces:
   0 & = |z-z_0|^2 -r^2 = ... = |z|^2+|z_0|^2-2 Re(z\overline{z_0}) - r^2
 \end{eqnarray*}
 
-\subsection{Topologia compleja}
+\section{Topologia compleja}
 La norma \( \cdot \) en \(\mathbb{C}^{}\), genera una métrica,
 
 \[d(z_1,z_2) = |z_1 - z_2|\]
@@ -384,15 +383,11 @@ Las bolas se llaman discos.
   \[ \overline{\Delta (z_0, r) }= C(z_0,r) = \{z \in \mathbb{C}^{} : |z-z_0| \leq r\}\]
 \end{definicion}
 
-\textbf{Importante: }
-
 \((\mathbb{C}^{}, |\cdot|)\) es un espacio vectorial normado COMPLETO (Toda sucesion de Cauchy converge)
 
 \begin{teorema}[Los números complejos son completos]
   Sea \(\{z_n\}\) una sucesión de números complejos. Si es una sucesión de Cauchy entonces es convergente.
   \begin{proof}
-  %Anotacion 11.
-  %Prueba cauchy 
     Sea \(\{z_n\}\) de Cauchy, entonces se tiene que \(\{Re(z_n)\}\) y \(\{Im(z_n)\}\) son sucesiones de Cauchy en \(\mathbb{R}\) y por la completitud de \(\mathbb{R}\) son convergentes a ciertos \(x_0, \;y_0\) respectivamente.
 
     De aquí se sigue que:
@@ -413,10 +408,75 @@ En cuanto a la continuidad de funciones:
   \end{cases} \qquad \text{son continuas}
 \end{eqnarray*}
 
-\subsection{Algebra de Banach y función exponencial}
+\section{Representación polar}
+Todo número complejo \(z=x+iy, \; x,y \in \mathbb{R}\) esta identificado con el punto \((x,y)\in \mathbb{R}^{2}\) mediante sus coodenadas cartesianas.
+
+De igual manera tenemos que todo punto de \(\mathbb{R}^{2}\) distinto del origen queda determinado unequivocamente por su módulo y el ángulo que forma con el eje de las abscisas positivas.
+
+%TODO: grafica sobre la representación polar en el plano.
+
+\begin{definicion}[Argumento]
+
+  Si \(z \in \mathbb{C}-{0}\) definimos el argumento de z como el siguiente conjunto:
+  \[arg(z) = \left\{ \theta \in \mathbb{R} : \cos{\theta}=\frac{Re(z)}{|z|}, \; \sin{\theta}=\frac{Im(z)}{|z|}\right\}\]
+\end{definicion}
+
+\begin{proposicion}
+ Si \(\theta_0 \in arg(z)\) entonces:
+ \[arg(z)= \left\{ \theta_0+2\pi k : k \in \mathbb{Z} \right\}\]
+\end{proposicion}
+
+\section{Algebra de Banach y función exponencial}
 Tenemos entonces que \((\mathbb{C},+,\cdot, |\cdot|)\) es un algebra de Banach conmutativo, luego la teoria de series de potencias tiene perfecto sentido en \(\mathbb{C}\), y en particular podemos definir la exponencial de cualquier número complejo:
 
-Sea \(z=x+iy, \; x,y\in \mathbb{R}\) entonces \(e^z=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!}\)
+Sea \(z=x+iy, \; x,y\in \mathbb{R}\) entonces \(e^z=\sum\limits_{n=0}^{\infty}\frac{z^n}{n!}\)
 
 Además teniendo en cuenta la conmutatividad del producto en \(\mathbb{C}\), tenemos que:
 \[e^{z_1+z_2}=e^{z_1}e^{z_2}\]
+
+\subsection{Propiedades de la función exponencial}
+\begin{enumerate}
+  \item \(e^0=1\)
+  \item Sea \(x\in \mathbb{R}\) entonces \(e^x=\sum\limits_{n=0}^{\infty}\frac{x^n}{n!}\) es simplemente la exponencial real, luego con la exponencial compleja nos encontramos ante una extensión de su definición.
+  \item Sea \(z=x+iy, \; x,y\in \mathbb{R}\).
+    \begin{eqnarray*}
+      e^z & = & e^{x+iy}=e^xe^{iy}=e^x\sum\limits_{n=0}^{\infty}\frac{(iy)^n}{n!}= \\
+          & = & e^x\left( 1+i\frac{y}{1!}+i^2\frac{y^2}{2!}+i^3\frac{y^3}{3!}+ \cdots \right) = \\
+          & = & e^x\left[ \left( 1-\frac{y^2}{2!}+\frac{y^4}{4!} \cdots \right) + i\left( y-\frac{y^3}{3!}+\frac{y^5}{5!} \cdots \right)\right] = \\
+          & = & e^x(\cos{y}+i\sin{y})
+    \end{eqnarray*}
+  \item Sea \(z=x+iy, \; x,y\in \mathbb{R}\) y aplicando la propiedad anterior tenemos:
+    \begin{eqnarray*}
+      Re(e^z)=e^x\cos{y}=e^{Re(z)}\cos(Im(z)) \\
+      Im(e^z)=e^x\sin{y}=e^{Re(z)}\sin(Im(z))
+    \end{eqnarray*} 
+  \item Como consecuencia del punto anterior tenemos que las funciones \(Re(z)\) y \(Im(z)\) son continuas y por consiguiente \(e^z\) es una función continua en \(\mathbb{C}\).
+  \item Sea \(z=x+iy, \; x,y\in \mathbb{R}\).
+    \begin{eqnarray*}
+      |e^z| & = & \sqrt{(Re(e^z))^2+(Im(e^z))^2} =  \\
+            & = & \sqrt{(e^x\cos{y})^2+((e^x\sin{y}))} = \\
+            & = & e^x \sqrt{(\cos^2{y}\sin^2{y})} = \\
+            & = & e^x = e^{Re(z)}
+    \end{eqnarray*} 
+  \item Como caso partircular de lo anterior tenemos que:
+    \[ |e^{i\theta} | = 1, \qquad \forall \theta \in \mathbb{R} \]
+  \item Sea \(z=x+iy, \; x,y\in \mathbb{R}\).
+    \begin{eqnarray*}
+      \overline{e^z} & = & \overline{e^{x+iy}} = \overline{e^x(\cos{y}+i\sin{y})} = e^x(\cos{y}-i\sin{y}) = \\
+                     & = & e^x(\cos{-y}+i\sin{-y}) = e^{x-iy} = e^{\overline{z}}
+    \end{eqnarray*}
+  \item La exponencial compleja es periodica de periodo \(2 \pi i \). Sea \(z=x+iy, \; x,y\in \mathbb{R}\).
+    \begin{eqnarray*}
+      e^{z+2\pi i} = e^{z+i(y+2\pi)} = e^x(\cos(y+2\pi)+i\sin(y+2\pi)) = e^x(\cos{y}+i\sin{y}) = e^z
+    \end{eqnarray*}
+  \item Como consecuencia directa del punto anterior tenemos que la exponencial compleja no es inyectiva.
+  \item Veamos que además no es sobreyectiva.
+    \[e^z \neq 0 \qquad \forall z \in \mathbb{C}\]
+    Ya que \(e^z*e^{-z} = e^{z-z} = e^0 = 1\), luego como la imagen de todos los números complejos es invertible dichas imagenes son no nulas.
+  \item De hecho, 0 es el único punto omitido por la exponencial. Es decir, si \(w\in \mathbb{C}-\{0\}\), entonces existe \(z\in \mathbb{C}\) tal que \(e^z=w\).
+    \begin{proof}
+      Queda pendiente tras la forma polar %TODO
+    \end{proof}
+
+\end{enumerate}
+
