@@ -417,7 +417,7 @@ De igual manera tenemos que todo punto de \(\mathbb{R}^{2}\) distinto del origen
 
 \begin{definicion}[Argumento]
 
-  Si \(z \in \mathbb{C}-{0}\) definimos el argumento de z como el siguiente conjunto:
+  Si \(z \in \mathbb{C}-\{0\}\) definimos el argumento de z como el siguiente conjunto:
   \[arg(z) = \left\{ \theta \in \mathbb{R} : \cos{\theta}=\frac{Re(z)}{|z|}, \; \sin{\theta}=\frac{Im(z)}{|z|}\right\}\]
 \end{definicion}
 
@@ -425,6 +425,20 @@ De igual manera tenemos que todo punto de \(\mathbb{R}^{2}\) distinto del origen
  Si \(\theta_0 \in arg(z)\) entonces:
  \[arg(z)= \left\{ \theta_0+2\pi k : k \in \mathbb{Z} \right\}\]
 \end{proposicion}
+\begin{proof}
+  Veamos que \(arg(z)\subset \{\theta_0 +2 \pi k : k \in \mathbb{Z}\}\).
+
+  Sea \(\theta_1 \in arg(z)\). Entonces, como \(\theta_0 \in arg(z)\) se tiene que:
+  \begin{eqnarray*}
+    \cos(\theta_1) = \frac{Re(z)}{|z|} = \cos(\theta_0) \Rightarrow \theta_1 = \theta_0 + e \pi k, \; k \in \mathbb{Z}
+  \end{eqnarray*}
+  Por ser la función coseno par se tiene: \(\theta_1 = -\theta_0 + e \pi k, \; k \in \mathbb{Z}\)
+
+  A partir de lo anterior tambien, como también se tiene \( \sin(\theta_1) = \sin(\theta_0)\) tenemos que:
+  \begin{eqnarray*}
+    \sin(\theta_0) = \sin(-\theta_0+2\pi k ) = 
+  \end{eqnarray*}
+\end{proof}
 
 \section{Algebra de Banach y función exponencial}
 Tenemos entonces que \((\mathbb{C},+,\cdot, |\cdot|)\) es un algebra de Banach conmutativo, luego la teoria de series de potencias tiene perfecto sentido en \(\mathbb{C}\), y en particular podemos definir la exponencial de cualquier número complejo:
