@@ -434,11 +434,54 @@ De igual manera tenemos que todo punto de \(\mathbb{R}^{2}\) distinto del origen
   \end{eqnarray*}
   Por ser la función coseno par se tiene: \(\theta_1 = -\theta_0 + e \pi k, \; k \in \mathbb{Z}\)
 
-  A partir de lo anterior tambien, como también se tiene \( \sin(\theta_1) = \sin(\theta_0)\) tenemos que:
+  A partir de lo anterior como también se tiene \( \sin(\theta_1) = \sin(\theta_0)\) tenemos que:
   \begin{eqnarray*}
-    \sin(\theta_0) = \sin(-\theta_0+2\pi k ) = 
+    \sin(\theta_0) = \sin(-\theta_0+2\pi k ) = \sin(-\theta_0+2\pi k) = \sin(-\theta_0) = -\sin(\theta_0)
   \end{eqnarray*}
+  Y por tanto:
+  \[2\sin(\theta_0)=0 \Leftrightarrow \theta_0=k_1\pi\]
+  Para algún \(m_1\in \mathbb{Z}\).
+  
+  A partir de aquí:
+  \begin{eqnarray*}
+    \theta_1 & = & -\theta_0 + 2\pi k = -k_1 \pi + 2\pi k = \\
+             & = & k_1 \pi -2 k_1\pi + 2\pi k = k_1 \pi +2(k-k_1) \pi = \\
+             & = & \theta_0+2(k-k_1)\pi
+  \end{eqnarray*}
+  O sea \(\theta_1=\theta_0+2\pi k , \; k\in \mathbb{Z}\).
 \end{proof}
+
+\textbf{-Consecuencia:}
+
+Para \(z\in \mathbb{C}-\{0\}\) y cualquier \(\varphi \in \mathbb{R}\) hay uno y solo un \( \theta \in arg(z) \cap [\varphi, \varphi+2\pi)\)
+
+\begin{definicion}[Argumento principal]
+  Si \(z \in \mathbb{C}-\{0\}\) su argumento principal es
+  \[Arg(z) = arg(z) \cap [-\pi, \pi)\]
+\end{definicion}
+
+\textbf{-Observación:}
+
+Si \(z \in \mathbb{C}-\{0\}\):
+\begin{eqnarray*}
+  Arg(z) = \begin{cases}
+    \arccos \frac{Re(z)}{|z|} , \quad \text{si} \; Im(z) > 0 \\
+    -\arccos \frac{Re(z)}{|z|} , \quad \text{si} \; Im(z) \leq 0
+  \end{cases}
+\end{eqnarray*}
+(Ejercicio: encontrar una expresión cerrada del argumento principal esta vez en términos del \(\arcsin\)).
+
+\textbf{-Observación:}
+
+\(Arg: \mathbb{C}-\{0\} \rightarrow \mathbb{R}\) es continua en \(\mathbb{C}-\{ (-\infty, 0] \}\) y no puede ser extendido de forma continua en \((-\infty, 0]\).
+
+(Ejercicio)
+
+\begin{definicion}[Forma polar de un número complejo no nulo]
+  Sea \(z \in \mathbb{C}-\{0\}\). Entonces lo podemos expresar de términos de su módulo y uno de sus argumentos:
+  \[ z = Re(z) + i Im(z) = |z| (\cos \theta + i \sin \theta)\]
+ cualquiera que sea \(\theta \in arg(z)\).
+\end{definicion}
 
 \section{Algebra de Banach y función exponencial}
 Tenemos entonces que \((\mathbb{C},+,\cdot, |\cdot|)\) es un algebra de Banach conmutativo, luego la teoria de series de potencias tiene perfecto sentido en \(\mathbb{C}\), y en particular podemos definir la exponencial de cualquier número complejo:
@@ -483,14 +526,114 @@ Además teniendo en cuenta la conmutatividad del producto en \(\mathbb{C}\), ten
     \begin{eqnarray*}
       e^{z+2\pi i} = e^{z+i(y+2\pi)} = e^x(\cos(y+2\pi)+i\sin(y+2\pi)) = e^x(\cos{y}+i\sin{y}) = e^z
     \end{eqnarray*}
+    De hecho este es el menor periodo posible, es decir:
+    \[e^z=e^w \Leftrightarrow z-w=2k\pi i, \; k\in \mathbb{Z}\]
   \item Como consecuencia directa del punto anterior tenemos que la exponencial compleja no es inyectiva.
   \item Veamos que además no es sobreyectiva.
     \[e^z \neq 0 \qquad \forall z \in \mathbb{C}\]
     Ya que \(e^z*e^{-z} = e^{z-z} = e^0 = 1\), luego como la imagen de todos los números complejos es invertible dichas imagenes son no nulas.
   \item De hecho, 0 es el único punto omitido por la exponencial. Es decir, si \(w\in \mathbb{C}-\{0\}\), entonces existe \(z\in \mathbb{C}\) tal que \(e^z=w\).
     \begin{proof}
-      Queda pendiente tras la forma polar %TODO
-    \end{proof}
+      Sea \(w\in \mathbb{C}-\{0\}\), buscamos \(z\in \mathbb{C}\) tal que \(e^z=w\).
 
+      Escribimos \(w=re^{i\theta}\), luego podemos tomar \(x=\log(r)\) y \(y=\theta\) y obtenemos que para \(z=x+iy\) se satisface:
+      \[e^z=e^{x+iy}=e^(\log(r))e^{i\theta}=re^{i\theta}\]
+    \end{proof}
 \end{enumerate}
 
+\section{Forma exponencial de los números complejos}
+
+A partir de la definición de la función exponencial podemos definir la siguiente representación de números complejos:
+
+\begin{definicion} [Forma exponencial de los números complejos]
+  Sea \(z\in \mathbb{C}\)  y \(\theta \in arg(z)\) definimos su forma exponencial como:
+  \[z = Re(z)+iIm(z)=|z|(\cos \theta + i\sin \theta) = |z|e^{i\theta}\] 
+\end{definicion}
+
+%TODO: Visualizacion funciones
+
+\section{Argumento, logaritmo y sus ramas.}
+
+Si \(z \in \mathbb{C}-\{0\}\) definimos el argumento principal de z como:
+\[Arg(z) = arg(z) \cup [-\pi, \pi)\]
+
+Puede comprobarse que el argumento principal es una función.
+
+\begin{definicion}[Logaritmo complejo]
+Si \(z \in \mathbb{C}-\{0\}\) definimos el logaritmo complejo de z como:
+\begin{eqnarray*}
+  log(z) = \{w\in \mathbb{C} : e^w=z\} = \{log |z| + i\theta : \theta \in arg(z)\} = log|z| +i\,arg(z)
+\end{eqnarray*}
+\end{definicion}
+
+Como podemos oberservar el logaritmo complejo no se trata de una función sino de un conjunto, por ello se define:
+
+\begin{definicion}[Logaritmo principal]
+ Si \(z \in \mathbb{C}-\{0\}\) definimos el logaritmo principal como:
+ \[ Log(z) = log|z|+i\,Arg(z)\]
+\end{definicion}
+
+\subsection{Propiedades:}
+
+\begin{enumerate}
+  \item Si \(z_1,z_2 \in \mathbb{C}-\{0\}\). Reescribiendo en forma polar \(z_1=r_1e^{i\theta_1}\),\(z_2=r_2e^{i\theta_2}\) con \(r_1,r_2 \in \mathbb{R}\) y \(\theta_1\in arg(z_1),\theta_2 \in arg(z_2)\).
+    \begin{eqnarray*}
+      arg(z_1z_2) & = & arg(r_1e^{i\theta_1} r_2e^{i\theta_2}) = \\ 
+                  & = & arg(r_1r_2e^{i(\theta_1+\theta_2)}) = \\
+                  & = & arg(z_1)+arg(z_2)
+    \end{eqnarray*}
+    De lo que se sigue:
+    \[ log(z_1z_2) = log(z_1)+log(z_2)\]
+
+  \item Hay que tener precaución con el argumento principal del producto de dos complejos puesto que en general no es la suma de sus argumentos principales.
+    \[Arg(z_1z_2) \neq Arg(z_1)+Arg(z_2) \; \forall z \in \mathbb{C}\]
+    Por ejemplo tomando \(z_1 = i = z_2\).
+    \[ Arg(i)+Arg(i) = \frac{\pi}{2}+\frac{\pi}{2} = \pi \not\in [-\pi, \pi) \Rightarrow Arg(z_1z_2) \neq Arg(z_1)+Arg(z_2)\]
+  \item \(Arg(z)\) es continua en \(\mathbb{C}-\{(-\infty,0]\}\) y no admite extensión continua a un conjunto mayor.
+    (\(Arg\) es una rama continua de \(arg(z)\) en \(\mathbb{C}-\{(-\infty,0]\}\).
+\end{enumerate}
+
+Definamos preciamente que es una rama de una función compleja:
+
+\begin{definicion}[Rama de arg(z)]
+  Sea \(A \subset \mathbb{C}-\{0\}\).
+  Decimos que \(\varphi: A \to \mathbb{R}\) es rama continua de \(arg(z)\) en A, si \(\varphi\) es continua en A y \(\varphi(z) \in arg(z), \; \forall z \in A\).
+\end{definicion}
+
+\begin{definicion}[Rama de arg(f)]
+  Sea \(A \subset \mathbb{C}\) y sea \(f:A\to \mathbb{C}\).
+  Decimos que \(\varphi: A \to \mathbb{R}\) es rama continua de \(arg(f)\) en A, si \(\varphi\) es continua en A y \(\varphi(z) \in arg(f(z)), \; \forall z \in A\).
+\end{definicion}
+
+\begin{definicion}[Rama de log(z)]
+  Sea \(A \subset \mathbb{C}-\{0\}\).
+  Decimos que \(\Psi: A \to \mathbb{C}\) es rama continua de \(log(z)\) en A, si \(\Psi\) es continua en A y \(\Psi(z) \in log(z), \; \forall z \in A\).
+\end{definicion}
+
+\begin{definicion}[Rama de log(z)]
+  Sea \(A \subset \mathbb{C}\) y sea \(f: A\to \mathbb{C}\).
+  Decimos que \(\Psi: A \to \mathbb{C}\) es rama continua de \(log(f)\) en A, si \(\Psi\) es continua en A y \(\Psi(z) \in log(f(z)), \; \forall z \in A\).
+\end{definicion}
+
+Algunos ejemplos son:
+
+\begin{enumerate}
+  \item \(Arg\) es rama de \(arg(z)\) en \(\mathbb{C}-\{(-\infty,0]\}\).
+  \item \(Log\) es rama de \(log(z)\) en \(\mathbb{C}-\{0\}\).
+  \item \(\varphi_0(z)=arg(z) \cup [0,2\pi), \; z \in \mathbb{C}-\{[0,\infty)\}\).
+    \(\varphi_0\) es continua en \(\mathbb{C}-\{(-\infty,0]\}\) y por tanto es una rama de \(arg(z)\) en \(\mathbb{C}-\{(-\infty,0]\}\)
+
+    Observemos que \(\varphi_0(z) = \pi + Arg(-z)\).
+
+    Luego \(\varphi_0(z) \in \pi + [-\pi,\pi) = [0,2\pi)\).
+
+    Y \(\varphi_0(z) \in arg(z)\):
+    \begin{eqnarray*}
+      \cos(\varphi_0(z)) = \cos(\pi+Arg(-z)) = -\cos(Arg(-z)) = - \frac{Re(-z)}{|-z|} = \frac{Re(z)}{|z|} \\
+      \sin(\varphi_0(z)) = \sin(\pi+Arg(-z)) = -\sin(Arg(-z)) = - \frac{Im(-z)}{|-z|} = \frac{Im(z)}{|z|}
+    \end{eqnarray*}
+
+    Finalmente observamos que \(\varphi_0\) es continua en \(\mathbb{C}-\{[0,\infty)\}\) equivalentemente \(\pi + Arg(-z)\) es continua en \(\mathbb{C}-\{[0,\infty)\}\) que lo es.
+
+    Además \(\varphi_0\) no admite extensiñon por continuidad a un conjunto mayor.
+\end{enumerate}
